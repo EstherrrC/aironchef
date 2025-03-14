@@ -15,9 +15,9 @@ Submitted by: **Five Golden Flowers**
 
 ## 👥 Team Members  
 - **Brenda Jow** ([LinkedIn]()) - Developer  
-- **Esther Chen** ([LinkedIn](www.linkedin.com/in/esther-chen-seattle)) - Developer  
-- **Tzu-Chieh Yang** ([LinkedIn](www.linkedin.com/in/tzu-chieh-yang-221149290)) - Developer
-- **Zhen Zhen** ([Email](zhenzhenzz0318@gmail.com)) - Developer
+- **Esther Chen** ([LinkedIn](https://www.linkedin.com/in/esther-chen-seattle)) - Developer 
+- **Tzu-Chieh Yang** ([LinkedIn](https://www.linkedin.com/in/tzu-chieh-yang-221149290)) - Developer
+- **Zhen Zhen** ([zhenzhenzz0318@gmail.com](mailto:zhenzhenzz0318@gmail.com)) - Developer
 - **Zhiliang Yu** ([LinkedIn]()) - Developer
 
 
