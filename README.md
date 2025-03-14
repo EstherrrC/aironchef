@@ -1,20 +1,27 @@
-# Microsoft and Qualcomm Hackathon Project - *AIronChef*
+# Hackathon Project - *AIronChef*
 
 Submitted by: **Five Golden Flowers**
 
-**AIronChef** is an web-based AI-powered meal assistant that leverages LLM and
-image recognition to assist users in meal planning and cooking. [An app description]
+**AIronChef** is an AI-powered meal assistant that leverages edge computing to help users plan meals and cook with voice guidance. By combining LLM technology with image recognition, AIronChef can suggest personalized recipes based on available ingredients and dietary restrictions, while providing hands-free cooking instructions.
  
+
+## 🌟 Features
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+
 
 ## 👥 Team Members  
 - **Brenda Jow ** ([LinkedIn]()) - Developer  
 - **Esther Chen** ([LinkedIn](www.linkedin.com/in/esther-chen-seattle)) - Developer  
 - **Tzu-Chieh Yang** ([LinkedIn](www.linkedin.com/in/tzu-chieh-yang-221149290)) - Developer
-- **ZhenZhen ** ([LinkedIn]()) - Developer
+- **Zhen Zhen ** ([Email](zhenzhenzz0318@gmail.com)) - Developer
 - **Zhiliang Yu** ([LinkedIn]()) - Developer
 
 
-## Setup instructions from scratch, including dependencies if applicable
+## 🚀 Setup Instructions (from scratch, including dependencies if applicable)
 
 - [ ] 
 - [ ] 
@@ -23,8 +30,17 @@ image recognition to assist users in meal planning and cooking. [An app descript
 - [ ] 
 
 
-## Run and usage instructions
+## 🏃‍♂️ Running the Application
   
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ]
+
+
+## 📱 Usage Instructions
+
 - [ ] 
 - [ ] 
 - [ ] 
@@ -39,9 +55,12 @@ image recognition to assist users in meal planning and cooking. [An app descript
 - [ ] References used while developing the app
 - [ ] Well-commented code
 
+## 🧪 Testing
 
-## Notes
+## 📝 Notes
 
-- [ ] 
-- [ ] 
-- [ ]
+## 🔗 References
+
+## 📄 License
+
+- This project is licensed under the MIT License - see the LICENSE file for details.
