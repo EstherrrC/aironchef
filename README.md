@@ -14,11 +14,11 @@ Submitted by: **Five Golden Flowers**
 
 
 ## 👥 Team Members  
-- **Brenda Jow** ([LinkedIn]()) - Developer  
+- **Brenda Jow** ([LinkedIn](https://www.linkedin.com/in/brendajow/)) - Developer  
 - **Esther Chen** ([LinkedIn](https://www.linkedin.com/in/esther-chen-seattle)) - Developer 
 - **Tzu-Chieh Yang** ([LinkedIn](https://www.linkedin.com/in/tzu-chieh-yang-221149290)) - Developer
 - **Zhen Zhen** ([Email](mailto:zhenzhenzz0318@gmail.com)) - Developer
-- **Zhiliang Yu** ([LinkedIn]()) - Developer
+- **Zhiliang Yu** ([Email](mailto:zellayu1212@gmail.com)) - Developer
 
 
 ## 🚀 Setup Instructions (from scratch, including dependencies if applicable)
