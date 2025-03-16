@@ -3,11 +3,11 @@ import numpy as np
 import cv2
 import os
 
-onnx_model_path = "efficientnet_b4.onnx"
+onnx_model_path = "./efficientnet_b4.onnx"
 session = ort.InferenceSession(onnx_model_path)
 
 classes = []
-with open("imagenet_class.txt", "r") as file:
+with open("./cv/imagenet_class.txt", "r") as file:
   for line in file:
     classes.append(line.strip())
 
@@ -37,7 +37,7 @@ def classify_images_in_folder(folder_path, output_file):
             f.write(f"{image_file}: {class_label}\n")
             print(f"Image: {image_file} | Predicted class: {class_label}")
 
-image_folder_path = "./image"
+image_folder_path = "cv/image"
 output_txt_file = "fridge_ingredient.txt"
 
 classify_images_in_folder(image_folder_path, output_txt_file)
