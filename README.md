@@ -4,15 +4,6 @@ Submitted by: **Five Golden Flowers**
 
 **AIronChef** is an AI-powered meal assistant that leverages edge computing to help users plan meals and cook with voice guidance. By combining LLM technology with image recognition, AIronChef can suggest personalized recipes based on available ingredients and dietary restrictions, while providing hands-free cooking instructions.
  
-
-## 🌟 Features
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-
-
 ## 👥 Team Members  
 - **Brenda Jow** ([LinkedIn](https://www.linkedin.com/in/brendajow/)) - Developer  
 - **Esther Chen** ([LinkedIn](https://www.linkedin.com/in/esther-chen-seattle)) - Developer 
@@ -20,50 +11,16 @@ Submitted by: **Five Golden Flowers**
 - **Zhen Zhen** ([Email](mailto:zhenzhenzz0318@gmail.com)) - Developer
 - **Zhiliang Yu** ([Email](mailto:zellayu1212@gmail.com)) - Developer
 
+## 🌟 Features
 
-## 🚀 Setup Instructions (from scratch, including dependencies if applicable)
-
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-
-
-## 🏃‍♂️ Running the Application
-  
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ]
+- [ ] **Computer Vision Ingredient Analysis** - Users can upload images of the food items in their refrigerator, and AIronChef will analyze the available ingredients using computer vision.
+- [ ] **AI-Powered Recipe Suggestions** - Based on the analyzed ingredients and dietary restrictions, the system will generate personalized recipe suggestions.
+- [ ] **Health-Focused Chatbot** - Users can chat with an AI-powered chatbot to discuss their health concerns, dietary needs, and meal planning.
+- [ ] **Automated Grocery List Generation** - AIronChef can generate a shopping list based on missing ingredients needed for suggested recipes.
+- [ ] **Recipe Receipt Generation** - The chatbot will provide users with a digital receipt, including nutritional information and recommended meals to help maintain a balanced diet.
 
 
-## 📱 Usage Instructions
-
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ]
-
-
-## Nice to have, but not required, components include:
-
-- [ ] Tests and testing instructions to verify the app setup
-- [ ] Notes section containing additional information not covered in the app description
-- [ ] References used while developing the app
-- [ ] Well-commented code
-
-## 🧪 Testing
-
-## 📝 Notes
-
-## 🔗 References
-
-## Developer Setip Notes
-
-# Setup Guide for Local Development
+## 🚀 Setup Instructions
 
 This README will guide you through setting up the project on your local computer. It includes the creation of a virtual environment, installation of dependencies, and troubleshooting steps.
 
@@ -78,29 +35,44 @@ Ensure that you have the following installed on your local machine:
 
 ## Steps to Set Up the Project
 
+### SetupLLM
+
+1. Install and setup [AnythingLLM](https://anythingllm.com/).
+    * Choose Qualcomm QNN when prompted to choose an LLM provider to target the NPU
+    * Choose a model of your choice when prompted. This sample uses __Llama 3.1 8B Chat with 8K context__
+2. Create a workspace by clicking "+ New Workspace"
+3. Generate an API key
+    * Click the settings button on the bottom of the left panel
+    * Open the "Tools" dropdown
+    * Click "Developer API"
+    * Click "Generate New API Key"
+
+
 ### 1. Clone the Repository
 
 Clone the repository to your local machine using the following command:
 
 ```bash
 git clone <repository-url>
-cd <repository-folder>
 ```
 
 ### 2. Create a Virtual Environment
 
 Navigate to the project directory and create a virtual environment to isolate your project dependencies:
+```
+cd <repository-folder>
+```
 
 #### For Windows (PowerShell):
 
 ```powershell
-python3 -m venv llm-venv
+python -m venv llm-venv
 ```
 
 #### For macOS/Linux (Terminal):
 
 ```bash
-python3 -m venv llm-venv
+python -m venv llm-venv
 ```
 
 This will create a new virtual environment called `llm-venv`.
@@ -140,9 +112,9 @@ pip install opencv-python onnxruntime
 You might encounter errors if certain files are missing. For example, the `config.yaml` file was not found initially. You can manually create the `config.yaml` file in the project directory with the following format:
 
 ```yaml
-api_key: "EJ1VK5N-D084RGH-NKJDTGB-SV282YJ"
+api_key: "your-apikey"
 model_server_base_url: "http://localhost:3001/api/v1"
-workspace_slug: "aihackathon"
+workspace_slug: "your-slug"
 ```
 
 If you already have this file in another location, you can copy it into the project directory:
@@ -164,12 +136,16 @@ cp /path/to/config.yaml .
 To run the chatbot script, use the following command:
 
 ```bash
-python3 ./src/terminal_chatbot.py
+python src/terminal_chatbot.py
 ```
 
 This should start the chatbot, and you should be able to interact with it.
 
 ### 7. Troubleshooting
+
+- **Qualcomm QNN Runtime Missing**
+
+On a Snapdragon X Elite machine, Qualcomm QNN should be the default LLM Provider. If you do not see Qualcomm QNN as an option on the dropdown, you downloaded the AMD64 version of AnythingLLM. Delete the app and install the ARM64 version instead.
 
 - **ModuleNotFoundError**: If you encounter an error like `ModuleNotFoundError: No module named 'requests'`, make sure that the virtual environment is activated and that all dependencies are installed by running:
 
@@ -189,14 +165,14 @@ This will allow you to run the script.
 
 - **Checking Python Version and Path**: If you encounter issues with running Python scripts, confirm that you are using the correct Python version and virtual environment:
 
-#### For Windows (PowerShell):
+### For Windows (PowerShell):
 
 ```powershell
 python3 --version
 where python3
 ```
 
-#### For macOS/Linux (Terminal):
+### For macOS/Linux (Terminal):
 
 ```bash
 python3 --version
@@ -214,4 +190,6 @@ Now your environment should be set up and running! You can start interacting wit
 - This project is licensed under the MIT License - see the LICENSE file for details.
 
 
+
+## 🔗 References
 
