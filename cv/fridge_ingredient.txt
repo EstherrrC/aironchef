@@ -1,0 +1,5 @@
+dough.jpg: dough
+lemon.jpg: lemon
+mushroom.jpg: mushroom
+veg.jpeg: head cabbage
+zucchini.jpg: zucchini
