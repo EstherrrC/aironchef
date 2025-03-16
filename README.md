@@ -4,8 +4,15 @@ Submitted by: **Five Golden Flowers**
 
 **AIronChef** is an AI-powered meal assistant that leverages edge computing to help users plan meals and cook with voice guidance. By combining LLM technology with image recognition, AIronChef can suggest personalized recipes based on available ingredients and dietary restrictions, while providing hands-free cooking instructions.
  
+## 👥 Team Members  
+- **Brenda Jow** ([LinkedIn](https://www.linkedin.com/in/brendajow/)) - Developer  
+- **Esther Chen** ([LinkedIn](https://www.linkedin.com/in/esther-chen-seattle)) - Developer 
+- **Tzu-Chieh Yang** ([LinkedIn](https://www.linkedin.com/in/tzu-chieh-yang-221149290)) - Developer
+- **Zhen Zhen** ([Email](mailto:zhenzhenzz0318@gmail.com)) - Developer
+- **Zhiliang Yu** ([Email](mailto:zellayu1212@gmail.com)) - Developer
 
 ## 🌟 Features
+
 - [ ] **Computer Vision Ingredient Analysis** - Users can upload images of the food items in their refrigerator, and AIronChef will analyze the available ingredients using computer vision.
 - [ ] **AI-Powered Recipe Suggestions** - Based on the analyzed ingredients and dietary restrictions, the system will generate personalized recipe suggestions.
 - [ ] **Health-Focused Chatbot** - Users can chat with an AI-powered chatbot to discuss their health concerns, dietary needs, and meal planning.
@@ -158,14 +165,14 @@ This will allow you to run the script.
 
 - **Checking Python Version and Path**: If you encounter issues with running Python scripts, confirm that you are using the correct Python version and virtual environment:
 
-#### For Windows (PowerShell):
+### For Windows (PowerShell):
 
 ```powershell
 python3 --version
 where python3
 ```
 
-#### For macOS/Linux (Terminal):
+### For macOS/Linux (Terminal):
 
 ```bash
 python3 --version
@@ -186,10 +193,3 @@ Now your environment should be set up and running! You can start interacting wit
 
 ## 🔗 References
 
-
-## 👥 Team Members  
-- **Brenda Jow** ([LinkedIn](https://www.linkedin.com/in/brendajow/)) - Developer  
-- **Esther Chen** ([LinkedIn](https://www.linkedin.com/in/esther-chen-seattle)) - Developer 
-- **Tzu-Chieh Yang** ([LinkedIn](https://www.linkedin.com/in/tzu-chieh-yang-221149290)) - Developer
-- **Zhen Zhen** ([Email](mailto:zhenzhenzz0318@gmail.com)) - Developer
-- **Zhiliang Yu** ([Email](mailto:zellayu1212@gmail.com)) - Developer
