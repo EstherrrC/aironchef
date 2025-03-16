@@ -104,3 +104,4 @@ if __name__ == '__main__':
     stop_loading = False
     chatbot = Chatbot()
     chatbot.run()
+    print("agent:")
