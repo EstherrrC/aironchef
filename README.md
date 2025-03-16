@@ -4,12 +4,25 @@ Submitted by: **Five Golden Flowers**
 
 **AIronChef** is an AI-powered meal assistant that leverages edge computing to help users plan meals and cook with voice guidance. By combining LLM technology with image recognition, AIronChef can suggest personalized recipes based on available ingredients and dietary restrictions, while providing hands-free cooking instructions.
  
+## 🔹 Project Background & Motivation 
+
+Cooking is an essential part of daily life, but meal planning and preparation can be challenging, especially for individuals with specific dietary needs such as diabetes management or weight control. 
+Many people struggle with deciding what to cook based on the ingredients they have, often leading to food waste or unbalanced diets. Additionally, following a recipe while cooking can be inconvenient, as users frequently need to check their phone screens with their hands occupied.
+
+Current solutions, such as online recipe platforms and meal planning apps, provide static recommendations based on user input but lack personalization and real-time guidance. Existing voice assistants, while useful, are often not optimized for step-by-step cooking instructions, making them less effective in a kitchen setting.
+This project aims to address these gaps by creating an AI-powered meal assistant that not only suggests recipes based on available ingredients but also provides real-time voice-guided cooking instructions. By incorporating LLM technology, the assistant will have a human-like personality, offering companionship and support throughout the cooking process. This personalized AI can cater to specific dietary needs while making the cooking experience more convenient and engaging, as well as helping users to stick to healthy recipes more easily.
+
+### Application flow
+![image](WechatIMG691.jpg)
+
 ## 👥 Team Members  
 - **Brenda Jow** ([LinkedIn](https://www.linkedin.com/in/brendajow/)) - Developer  
 - **Esther Chen** ([LinkedIn](https://www.linkedin.com/in/esther-chen-seattle)) - Developer 
 - **Tzu-Chieh Yang** ([LinkedIn](https://www.linkedin.com/in/tzu-chieh-yang-221149290)) - Developer
 - **Zhen Zhen** ([Email](mailto:zhenzhenzz0318@gmail.com)) - Developer
 - **Zhiliang Yu** ([Email](mailto:zellayu1212@gmail.com)) - Developer
+
+
 
 ## 🌟 Features
 
@@ -133,15 +146,46 @@ cp /path/to/config.yaml .
 
 ### 6. Running the Code
 
-To run the chatbot script, use the following command:
+This will launch the chatbot in interactive mode, allowing you to chat with the AI assistant.
 
 ```bash
-python src/terminal_chatbot.py
+python src/main.py
+```
+
+### 7. Usage
+
+| Command	| Function      |
+|-------------|---------------|
+|classify images {image file path}	| The bot will analyze the provided image, extract ingredients, and generate a healthy recipe based on the user's health condition. |
+| Provide health condition	| The user must enter their current health condition (e.g., "I have diabetes" or "I need a low-carb meal"), so the bot can generate a personalized meal plan. |
+| exit or quit	| Terminates the chatbot session.| 
+
+
+
+```
+$ python src/main.py
+You: Hello!
+Bot: Hi! How can I assist you today?
+
+You: classify images ./images/fruit_salad.jpg
+Bot: Analyzing the image...
+Bot: Ingredients detected: Banana, Apple, Orange
+Bot: Please provide your health condition to generate a suitable recipe.
+
+You: I have high blood pressure.
+Bot: Based on your health condition, here is a recommended healthy meal:
+     - Low-sodium fruit salad with yogurt
+     - Add flaxseeds for extra fiber and omega-3
+     - Avoid adding processed sugar
+
+You: quit
+Bot: Exiting chatbot. Have a great day!
+
 ```
 
 This should start the chatbot, and you should be able to interact with it.
 
-### 7. Troubleshooting
+### 8. Troubleshooting
 
 - **Qualcomm QNN Runtime Missing**
 
