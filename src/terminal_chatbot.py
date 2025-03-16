@@ -4,6 +4,7 @@ import threading
 import time
 import yaml
 
+
 def loading_indicator() -> None:
     """
     Display a loading indicator in the console while the chat request is being processed
@@ -30,9 +31,21 @@ class Chatbot:
 
         self.message_history = []
 
+        # Load ONNX model
+        #self.onnx_model_path = "efficientnet_b4.onnx"
+        #self.session = ort.InferenceSession(self.onnx_model_path)
+
+        # Load class labels
+        #self.classes = []
+        #with open("imagenet_class.txt", "r") as file:
+            #for line in file:
+                #self.classes.append(line.strip())
+
+    
     def run(self) -> None:
         """
         Run the chat application loop. The user can type messages to chat with the assistant.
+        """
         """
         while True:
             user_message = input("You: ")
@@ -43,6 +56,7 @@ class Chatbot:
             except Exception as e:
                 print("Error! Check the model is correctly loaded. More details in README troubleshooting section.")
                 sys.exit(f"Error details: {e}")
+        """
                 
 
     def chat(self, message: str) -> str:
@@ -56,6 +70,20 @@ class Chatbot:
         stop_loading = False
         loading_thread = threading.Thread(target=loading_indicator)
         loading_thread.start()
+
+        # Check if the user wants to classify an image
+        """
+        if message.lower().startswith("classify image "):
+            image_path = message.replace("classify image ", "").strip()
+            if os.path.exists(image_path):
+                stop_loading = True
+                loading_thread.join()
+                return self.classify_image(image_path)
+            else:
+                stop_loading = True
+                loading_thread.join()
+                return "Image file not found."
+                """
 
         headers = {
             "accept": "application/json",
@@ -75,7 +103,7 @@ class Chatbot:
             "message": message,
             "mode": "chat",
             "sessionId": "example-session-id",
-            "attachments": [],
+            #"attachments": [],
             "history": short_term_memory
         }
 
@@ -99,8 +127,46 @@ class Chatbot:
             return "Response is not valid JSON"
         except Exception as e:
             return f"Chat request failed. Error: {e}"
+    """
+    def preprocess_image(self, image_path) -> np.ndarray:
+        img = cv2.imread(image_path)
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        img = cv2.resize(img, (224, 224))
+        img = img.astype(np.float32) / 255.0
+        img = np.transpose(img, (2, 0, 1))
+        img = np.expand_dims(img, axis=0)
+        return img
+
+    def classify_image(self, image_path: str) -> str:
+        results = []
+        input_name = self.session.get_inputs()[0].name
+
+        for image_path in image_paths:
+            input_tensor = self.preprocess_image(image_path)
+            output = self.session.run(None, {input_name: input_tensor})
+
+            class_idx = np.argmax(output[0])
+            class_label = self.classes[class_idx]
+            results.append((image_path, class_label))
+            print(f"Image: {image_path} | Predicted class: {class_label}")
+
+        return results
+    
+    def process_command(user_input):
+        if user_input.startswith("classify images"):
+            image_paths = user_input.split()[2:]  # Example: classify images image1.jpg image2.jpg
+            results = classify_images(image_paths)
+            return "\n".join([f"{img}: {label}" for img, label in results])
+        else:
+            return chatbot.chat(user_input)
+
+    while True:
+        user_message = input("You: ")
+        print("Agent:", process_command(user_message))
+
 
 if __name__ == '__main__':
     stop_loading = False
     chatbot = Chatbot()
     chatbot.run()
+    """
