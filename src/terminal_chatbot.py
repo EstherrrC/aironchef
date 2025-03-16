@@ -3,6 +3,10 @@ import sys
 import threading
 import time
 import yaml
+import onnxruntime as ort
+import numpy as np
+import cv2
+import os
 
 def loading_indicator() -> None:
     """
@@ -30,6 +34,16 @@ class Chatbot:
 
         self.message_history = []
 
+        # Load ONNX model
+        self.onnx_model_path = "efficientnet_b4.onnx"
+        self.session = ort.InferenceSession(self.onnx_model_path)
+
+        # Load class labels
+        self.classes = []
+        with open("imagenet_class.txt", "r") as file:
+            for line in file:
+                self.classes.append(line.strip())
+
     def run(self) -> None:
         """
         Run the chat application loop. The user can type messages to chat with the assistant.
@@ -56,6 +70,18 @@ class Chatbot:
         stop_loading = False
         loading_thread = threading.Thread(target=loading_indicator)
         loading_thread.start()
+
+        # Check if the user wants to classify an image
+        if message.lower().startswith("classify image "):
+            image_path = message.replace("classify image ", "").strip()
+            if os.path.exists(image_path):
+                stop_loading = True
+                loading_thread.join()
+                return self.classify_image(image_path)
+            else:
+                stop_loading = True
+                loading_thread.join()
+                return "Image file not found."
 
         headers = {
             "accept": "application/json",
@@ -99,6 +125,26 @@ class Chatbot:
             return "Response is not valid JSON"
         except Exception as e:
             return f"Chat request failed. Error: {e}"
+    
+    def preprocess_image(self, image_path) -> np.ndarray:
+        img = cv2.imread(image_path)
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        img = cv2.resize(img, (224, 224))
+        img = img.astype(np.float32) / 255.0
+        img = np.transpose(img, (2, 0, 1))
+        img = np.expand_dims(img, axis=0)
+        return img
+
+    def classify_image(self, image_path: str) -> str:
+        input_name = self.session.get_inputs()[0].name
+        input_tensor = self.preprocess_image(image_path)
+
+        output = self.session.run(None, {input_name: input_tensor})
+
+        class_idx = np.argmax(output[0])
+        class_label = self.classes[class_idx]
+
+        return f"Predicted class for image '{image_path}': {class_label}"
 
 if __name__ == '__main__':
     stop_loading = False
