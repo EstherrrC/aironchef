@@ -6,11 +6,11 @@ Submitted by: **Five Golden Flowers**
  
 
 ## 🌟 Features
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
-- [ ] 
+- [ ] **Computer Vision Ingredient Analysis** - Users can upload images of the food items in their refrigerator, and AIronChef will analyze the available ingredients using computer vision.
+- [ ] **AI-Powered Recipe Suggestions** - Based on the analyzed ingredients and dietary restrictions, the system will generate personalized recipe suggestions.
+- [ ] **Health-Focused Chatbot** - Users can chat with an AI-powered chatbot to discuss their health concerns, dietary needs, and meal planning.
+- [ ] **Automated Grocery List Generation** - AIronChef can generate a shopping list based on missing ingredients needed for suggested recipes.
+- [ ] **Recipe Receipt Generation** - The chatbot will provide users with a digital receipt, including nutritional information and recommended meals to help maintain a balanced diet.
 
 
 ## 👥 Team Members  
